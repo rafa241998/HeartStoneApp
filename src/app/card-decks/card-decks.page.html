@@ -1,16 +1,26 @@
 <ion-list-header>  
-    <ion-label>Classes</ion-label>  
+    <ion-label >Classes</ion-label>  
 </ion-list-header>
 <ion-content>
+  <ion-button (click)="ocultarMazos()">Hide all</ion-button> 
+  <ion-button (click)="wolf.addSuperWolf()">Add SuperWolf</ion-button> 
+  <ion-button (click)="wolf.deleteSuperWolf()">Delete SuperWolf</ion-button> 
   <ion-list>
-    <ion-item *ngFor="let cardDeck of cardDecks">
-      <ion-avatar slot="start">
-        <img [src]="'../../assets/image/' + cardDeck+ '.png'"/>
-      </ion-avatar>
-      <ion-label>
-        <h2>{{cardDeck}}</h2>
+    <app-card-deck 
+      *ngFor="let cardDeck of cardDecks" 
+        [myCardDeck]="cardDeck" (clicked)="select($event)" > 
+    </app-card-deck>      
+    <app-card-deck #wolf [myCardDeck]="wolfDeck" (clicked)="select($event)" ></app-card-deck>
+    <ion-item>
+      <ion-label >
+        <h2>Selected Card Decks:</h2>
+        <p *ngFor="let name of selectedCardDecks">
+          &nbsp;&nbsp;&nbsp;&nbsp;{{name}}
+        </p> 
       </ion-label>
-    </ion-item>
+    </ion-item>   
+            
   </ion-list>
+  
 </ion-content>
 

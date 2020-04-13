@@ -1,0 +1,12 @@
+<ion-item (click)="click()">
+  <ion-avatar slot = "start">
+    <img [src]="'../../assets/images/' + myCardDeck.image">
+  </ion-avatar>
+  <ion-label>
+    <h2 [ngClass]="{'selected': isClick}">{{myCardDeck.name}}</h2>
+    <p *ngFor="let card of cards">
+      &nbsp;&nbsp;&nbsp;&nbsp;{{card}}
+    </p> 
+  </ion-label>
+  
+</ion-item>
