@@ -1,16 +1,14 @@
 <ion-list-header>  
-    <ion-label>Classes</ion-label>  
+    <ion-toolbar>
+      <ion-title>Card-decks</ion-title>
+    </ion-toolbar> 
 </ion-list-header>
-<ion-content>
+
+<ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item *ngFor="let cardDeck of cardDecks">
-      <ion-avatar slot="start">
-        <img [src]="'../../assets/image/' + cardDeck+ '.png'"/>
-      </ion-avatar>
-      <ion-label>
-        <h2>{{cardDeck}}</h2>
-      </ion-label>
-    </ion-item>
+    <app-card-list *ngFor="let cardDeck of cardDecks"
+    [listName]="cardDeck.name"
+    [items]="cardDeck.types"></app-card-list>
   </ion-list>
 </ion-content>
 

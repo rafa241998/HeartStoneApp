@@ -7,14 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { CardDecksPageRoutingModule } from './card-decks-routing.module';
 
 import { CardDecksPage } from './card-decks.page';
+import {HttpClientModule} from '@angular/common/http';
+import {CardListComponent} from '../card-list/card-list.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CardDecksPageRoutingModule
+    CardDecksPageRoutingModule,
+    HttpClientModule,    
   ],
-  declarations: [CardDecksPage]
+  declarations: [CardDecksPage , CardListComponent]
 })
 export class CardDecksPageModule {}
