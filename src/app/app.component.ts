@@ -15,8 +15,7 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    public toastController: ToastController,
+    private statusBar: StatusBar,    
     public alertController: AlertController
   ) {
     this.initializeApp();
@@ -27,16 +26,10 @@ export class AppComponent {
 
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.toast();      
+         
     });
   }
-  async toast() {
-    const toast = await this.toastController.create({
-      message: 'Bienvenido a mi APP',
-      duration: 2000,
-    });
-    toast.present();
-  }
+ 
   async presentAlert() {
     const alert = await this.alertController.create({           
       message: 'Do you really want to exit?',

@@ -16,17 +16,7 @@ const routes: Routes = [
               import('../card-decks/card-decks.module').then(m => m.CardDecksPageModule)
           }
         ]
-      },
-      {
-        path: 'login',
-        children: [
-          {
-            path: '',
-            loadChildren: () =>
-              import('../login/login.module').then(m => m.LoginPageModule)
-          }
-        ]
-      },
+      },      
       {
         path: 'about',
         children: [
@@ -36,17 +26,12 @@ const routes: Routes = [
               import('../about/about.module').then(m => m.AboutPageModule)
           }
         ]
-      },
-      {
-        path: '',
-        redirectTo: '/tabs/login',
-        pathMatch: 'full'
-      }
+      },     
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/login',
+    redirectTo: '/start/tabs/cards',
     pathMatch: 'full'
   }
 ];

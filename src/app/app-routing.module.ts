@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+const routes: Routes = [    
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }, 
   {
-    path: 'card-decks',
-    loadChildren: () => import('./card-decks/card-decks.module').then( m => m.CardDecksPageModule)
-  },
-  {
-    path: 'about',
-    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
-  },  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  }
+  },  
+  {
+    path: 'start',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },  
+
 
 ];
 @NgModule({

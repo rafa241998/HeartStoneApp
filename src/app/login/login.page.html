@@ -5,32 +5,24 @@
 </ion-header>
 
 <ion-content>
-  <div *ngIf="!login">
-    <form [formGroup]="elForm" (submit)="doLogin()" >
-      <ion-item>        
-        <ion-icon class="ion-padding-end" name="person-outline"></ion-icon>
-        <ion-label for="email"> Email: </ion-label>
-        <ion-input formControlName="email" id="email"  required></ion-input>
-        <div *ngIf="elForm.get('email').touched && (elForm.get('email').hasError('required') || elForm.get('email').hasError('email'))" >No válido!</div>
-      </ion-item>
-      <br>
-      <ion-item>
-        <ion-icon class="ion-padding-end" name="key-outline"></ion-icon>
-        <ion-label for="password"> Password: </ion-label>
-        <ion-input formControlName="password" id="password" required></ion-input>    
-        <div *ngIf="elForm.get('password').touched && elForm.get('password').hasError('required')">Obligatorio!</div>
-      </ion-item>                    
-      <br>
-      <ion-button type="submit" color="tertiary" expand="block" shape="round" [disabled]="!elForm.valid">Enviar</ion-button>
-    </form>
-  </div>
-  <div *ngIf="login" class="ion-padding">
-    <h1>Login realizado </h1>   
-    <ion-card >            
-      <h6>Email: {{email}}  </h6>           
-      <h6>Password: {{password}}  </h6>                
-    </ion-card>
-    
-  </div>
+  
+  <form [formGroup]="elForm" (submit)="doLogin()" >
+    <ion-item>        
+      <ion-icon class="ion-padding-end" name="person-outline"></ion-icon>
+      <ion-label for="email"> Email: </ion-label>
+      <ion-input formControlName="email" id="email"  required></ion-input>
+      <div *ngIf="elForm.get('email').touched && (elForm.get('email').hasError('required') || elForm.get('email').hasError('email'))" >No válido!</div>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-icon class="ion-padding-end" name="key-outline"></ion-icon>
+      <ion-label for="password"> Password: </ion-label>
+      <ion-input formControlName="password" id="password" required></ion-input>    
+      <div *ngIf="elForm.get('password').touched && elForm.get('password').hasError('required')">Obligatorio!</div>
+    </ion-item>                    
+    <br>
+    <ion-button type="submit" color="tertiary" expand="block" shape="round" [disabled]="!elForm.valid">Enviar</ion-button>
+  </form>
+   
   
 </ion-content>
